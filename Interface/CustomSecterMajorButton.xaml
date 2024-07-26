@@ -1,0 +1,92 @@
+﻿<UserControl x:Class="MusicCircle.Interface.CustomSecterMajorButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicCircle.Interface"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="650" Height="600" Width="600">
+    <UserControl.Resources >
+
+        <StreamGeometry x:Key="Geometry">
+            M 325,260 L 566,325 A 250,250 0 0 0 566,195 Z
+        </StreamGeometry>
+
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Path Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2" Data="{StaticResource Geometry}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <Style x:Key="SectorButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Path Name="border" Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding Background}" Data="{StaticResource Geometry}" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="Stroke" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Fill" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="Stroke" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Fill" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="Stroke" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Fill" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="Stroke" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <RotateTransform x:Key="Rotate000" CenterX="325" CenterY="260" Angle="000"/>
+        <RotateTransform x:Key="Rotate030" CenterX="325" CenterY="260" Angle="030"/>
+        <RotateTransform x:Key="Rotate060" CenterX="325" CenterY="260" Angle="060"/>
+        <RotateTransform x:Key="Rotate090" CenterX="325" CenterY="260" Angle="090"/>
+        <RotateTransform x:Key="Rotate120" CenterX="325" CenterY="260" Angle="120"/>
+        <RotateTransform x:Key="Rotate150" CenterX="325" CenterY="260" Angle="150"/>
+        <RotateTransform x:Key="Rotate180" CenterX="325" CenterY="260" Angle="180"/>
+        <RotateTransform x:Key="Rotate210" CenterX="325" CenterY="260" Angle="210"/>
+        <RotateTransform x:Key="Rotate240" CenterX="325" CenterY="260" Angle="240"/>
+        <RotateTransform x:Key="Rotate270" CenterX="325" CenterY="260" Angle="270"/>
+        <RotateTransform x:Key="Rotate300" CenterX="325" CenterY="260" Angle="300"/>
+        <RotateTransform x:Key="Rotate330" CenterX="325" CenterY="260" Angle="330"/>
+        <RotateTransform x:Key="Rotate360" CenterX="325" CenterY="260" Angle="360"/>
+    </UserControl.Resources>
+    
+    
+    <Grid x:Name="Circle">
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_CMajor_Click" RenderTransform="{StaticResource Rotate270}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_GMagor_Click" RenderTransform="{StaticResource Rotate300}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_DMajor_Click" RenderTransform="{StaticResource Rotate330}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_AMajor_Click" RenderTransform="{StaticResource Rotate000}" Margin="0,0,8,80"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_EMajor_Click" RenderTransform="{StaticResource Rotate030}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_BMajor_Click" RenderTransform="{StaticResource Rotate060}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_Gflat_FsharpMajor_Click" RenderTransform="{StaticResource Rotate090}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_DflatMajor_Click" RenderTransform="{StaticResource Rotate120}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_AflatMajor_Click" RenderTransform="{StaticResource Rotate150}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_EflatMajor_Click" RenderTransform="{StaticResource Rotate180}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_BflatMajor_Click" RenderTransform="{StaticResource Rotate210}"/>
+        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_FMajor_Click" RenderTransform="{StaticResource Rotate240}"/>
+    </Grid>
+</UserControl>
