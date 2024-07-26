@@ -10,7 +10,7 @@ namespace WpfApp1.SoundPlayAlghorithms
     internal class SoundPlayThread 
     {
         //Thread soundPlayThread;
-
+        //maybe can not to use
 
     }
 }
