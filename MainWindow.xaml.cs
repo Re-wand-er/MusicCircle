@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MusicCircle.Pages;
+using MusicCircle.SoundPlayAlghorithms;
 using System.ComponentModel;
 
 namespace MusicCircle

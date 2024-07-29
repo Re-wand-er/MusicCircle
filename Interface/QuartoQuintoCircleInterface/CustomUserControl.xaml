@@ -48,8 +48,8 @@
         <Button x:Name="button_FMagor"     Height="30" Width="60" Content="F"  Margin="220,108,505,446" Background="LightGray"  Click="button_FMagor_Click"/>
         <Button x:Name="button_DMinor"     Height="30" Width="60" Content="Dm" Margin="267,159,458,395" Background="LightGray"  Click="button_DMinor_Click"/>
 -->
-         <local:CustomSecterMajorButton/>
-        <local:CustomSectorMinorButton/>
+        <!--<local:CustomSecterMajorButton/>
+        <local:CustomSectorMinorButton/>-->
 
         <Path Fill="White" StrokeThickness="1" Stroke="#FF707070">
             <Path.Data>
