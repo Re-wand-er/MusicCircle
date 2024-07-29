@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MusicCircle"
     mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" MinHeight="600" MinWidth="800">
+        Title="MusicCircle" Height="600" Width="800" MinHeight="600" MinWidth="800">
     
     <Grid>
         
        <Grid.RowDefinitions>
-            <RowDefinition x:Name="Menu" Height="20"></RowDefinition>
+            <RowDefinition x:Name="Menu" Height="auto"></RowDefinition>
             <RowDefinition x:Name="Another"></RowDefinition>
        </Grid.RowDefinitions>
 
@@ -26,12 +26,12 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" Background="Black" Orientation="Vertical" HorizontalAlignment="Stretch">
-                <Button x:Name="quartoQuintoCircle" Width="150" Content="Кварто-квинтовый круг" Click="quartoQuintoCirclePage_Click">
+                <Button x:Name="quartoQuintoCircle" Width="150" Content="Кварто-квинтовый круг" Click="QuartoQuintoCirclePage_Click">
                     <Button.LayoutTransform>
                         <RotateTransform Angle="-90" />
                     </Button.LayoutTransform>
                 </Button>
-                <Button x:Name="virtualPiano" Width="150" Content="Виртуальное пианино" Click="virtualPianoPage_Click">
+                <Button x:Name="virtualPiano" Width="150" Content="Виртуальное пианино" Click="VirtualPianoPage_Click">
                     <Button.LayoutTransform>
                         <RotateTransform Angle="-90" />
                     </Button.LayoutTransform>
@@ -44,7 +44,7 @@
                       VerticalAlignment="Stretch"/>
 
             <Grid Grid.Column="2">
-                <ScrollViewer Keyboard.KeyDown="button_KeyDown">
+                <ScrollViewer Keyboard.KeyDown="Button_KeyDown">
                     <Grid>
                         <Viewbox Stretch="None">
                             <Grid>

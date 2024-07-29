@@ -14,13 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MusicCircle.Pages;
+using System.ComponentModel;
 
 namespace MusicCircle
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow : Window/*, INotifyPropertyChanged*/
     {
         public MainWindow()
         {
@@ -29,7 +30,7 @@ namespace MusicCircle
         }
         // Привязка текста кнопки от TextBox в Настройках меню
         // TextBox загрузка из ini? (settings) файла
-        public async void button_KeyDown(object sender, KeyEventArgs e)
+        public async void Button_KeyDown(object sender, KeyEventArgs e)
         {
             // Возможно проблема в рассинхроне кроется здесь
             // А может и нет 
@@ -66,13 +67,11 @@ namespace MusicCircle
                     case Key.Enter: await ChordSound.Play("D F A"); break;
                 }
         }
-
-        private void quartoQuintoCirclePage_Click(object sender, RoutedEventArgs e)
+        private void QuartoQuintoCirclePage_Click(object sender, RoutedEventArgs e)
         {
             this.MainFrame.Navigate(new QuartoQuintoCirclePage());
         }
-
-        private void virtualPianoPage_Click(object sender, RoutedEventArgs e)
+        private void VirtualPianoPage_Click(object sender, RoutedEventArgs e)
         {
             this.MainFrame.Navigate(new VirtualPianoPage());
         }

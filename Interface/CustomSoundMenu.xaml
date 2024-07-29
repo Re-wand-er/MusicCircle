@@ -6,12 +6,30 @@
              xmlns:local="clr-namespace:MusicCircle"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Menu  VerticalAlignment="Top" IsMainMenu="True">
-            <MenuItem Header="Preferences">
+
+
+    <Grid VerticalAlignment="Stretch" >
+        <Menu  VerticalAlignment="Top" IsMainMenu="True"  Height="20">
+            <MenuItem x:Name="SettingsMenu"  Header="Параметры">
+                
+                <StackPanel>
+                    <Button x:Name="QuartoQuintoCircleSettings" Content="Квинтовый круг" 
+                            Visibility="Visible" Click="QuartoQuintoCircleSettings_Click"
+                            Background="LightGray"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="VirtualPianoSettings" Content="Виртуальное пианино" 
+                            Visibility="Visible" Click="VirtualPianoSettings_Click"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <Button x:Name="GeneralSettings" Content="Общее" 
+                            Visibility="Visible" Click="GeneralSettings_Click"/>
+                </StackPanel>
             </MenuItem>
-            <Separator/>
         </Menu>
+        
     </Grid>
 </UserControl>
     

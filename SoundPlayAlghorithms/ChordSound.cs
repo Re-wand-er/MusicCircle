@@ -64,7 +64,7 @@ namespace MusicCircle
         //TimeSpan.FromSeconds()
         private static async Task StartOneNoteSoundAsync(string notesPath, TimeSpan duration)
         {
-            // Создаем MediaPlayer и DispatcherTimer в основном UI-потоке
+            
             await Application.Current.Dispatcher.Invoke(async () =>
             {
                 MediaPlayer player = new MediaPlayer();
@@ -83,7 +83,7 @@ namespace MusicCircle
                 player.Play();
                 timer.Start();
 
-                // Асинхронно ждем окончания воспроизведения
+                
                 await Task.Delay(duration);
             });
         }
