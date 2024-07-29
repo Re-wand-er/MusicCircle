@@ -13,13 +13,13 @@ namespace MusicCircle
     /// </summary>
     public partial class App : Application
     {
-        //[STAThread]
-        //static void Main()
-        //{
-        //    //App app = new App();
-        //    //MainWindow window = new MainWindow();
-        //    //window.Title = "MusicCircle";
-        //    //app.Run(window);
-        //}
+        [STAThread]
+        static void Main()
+        {
+            App app = new App();
+            MainWindow window = new MainWindow();
+            window.Title = "MusicCircle";
+            app.Run(window);
+        }
     }
 }

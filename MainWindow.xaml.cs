@@ -23,6 +23,9 @@ namespace MusicCircle
     /// </summary>
     public partial class MainWindow : Window/*, INotifyPropertyChanged*/
     {
+        /// <summary>
+        /// Использование MVVM для привязки и настройки данных 
+        /// </summary>
         public MainWindow()
         {
             InitializeComponent();

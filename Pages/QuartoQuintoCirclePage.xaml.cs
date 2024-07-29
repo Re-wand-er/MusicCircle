@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MusicCircle.Settings;
+using MusicCircle.SoundPlayAlghorithms;
 
 namespace MusicCircle.Pages
 {
@@ -20,9 +22,11 @@ namespace MusicCircle.Pages
     /// </summary>
     public partial class QuartoQuintoCirclePage : Page
     {
+        SettingsViewModel settingsViewModel;
         public QuartoQuintoCirclePage()
         {
             InitializeComponent();
+            settingsViewModel = new SettingsViewModel("Textic");
         }
 
         public async void button_KeyDown(object sender, KeyEventArgs e)
