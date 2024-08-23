@@ -13,16 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MusicCircle.Settings.QuintoCirclePages
+namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageView
 {
     /// <summary>
-    /// Логика взаимодействия для ChordPage.xaml
+    /// Логика взаимодействия для VolumePage.xaml
     /// </summary>
-    public partial class ChordPage : Page
+    public partial class VolumePage : UserControl
     {
-        public ChordPage()
+        public VolumePage()
         {
             InitializeComponent();
+            DataContext = new PageViewModel.VolumePageVM();
         }
     }
 }

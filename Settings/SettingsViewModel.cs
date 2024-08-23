@@ -1,49 +1,59 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Input;
-using static System.Net.Mime.MediaTypeNames;
+using System.Diagnostics;
+using System.Windows;
+using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel;
 
 namespace MusicCircle.Settings
 {
-    internal class SettingsViewModel /*: INotifyPropertyChanged*/
+    internal class SettingsViewModel : INotifyPropertyChanged
     {
-        private List<string> _textContent;
-        public List<string> TextContent
-        {
-            get => this._textContent;
+        // Отвечает за отображение текущей страницы
+        private object _currentPage;
+        public object CurrentPage
+        {   
+            get { return _currentPage; } 
             set
             {
-                _textContent = value;
-                //OnPropertyChanged();
+                    _currentPage = value;
+                    OnPropertyChanged(nameof(CurrentPage));
             }
         }
-
-        public ICommand ButtonClickCommand { get; }
-
-        public SettingsViewModel()
+        // Хранит VM всех страниц 
+        private List<PageSettingsModel> _pageSettingsModel = new List<PageSettingsModel>();
+        public List<PageSettingsModel> PageSettingsModel
         {
-            TextContent = new List<string>() { "Standart text", "None standart text", "Second"};
+            get => _pageSettingsModel;
+            set
+            {
+                if (_pageSettingsModel != value)
+                {
+                  _pageSettingsModel = value;
+                  OnPropertyChanged(nameof(_pageSettingsModel));
+                }
+            }
         }
-        public SettingsViewModel(string text/*, Action action*/)
+        // Команда которая сработает при нажатии кнопки
+        public ICommand PagesClickCommand { get; }
+        private void OpenPage(object pages)
         {
-            TextContent = new List<string>() { text};
-            //
-            //ChangeTextCommand = new RelayCommand(ChangeText);
+            CurrentPage = pages;  
         }
+        public SettingsViewModel(params PageSettingsModel[] page)
+        {
+            foreach(var p in page) PageSettingsModel.Add(p);
 
+            CurrentPage = page[0].OpenUserControl;
+            PagesClickCommand = new SettingsButtonCommandModel(OpenPage);
+        }
+        
 
-        //public event PropertyChangedEventHandler PropertyChanged;
-        //
-        //protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //}
+        public event PropertyChangedEventHandler PropertyChanged;
+        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
     }
 }

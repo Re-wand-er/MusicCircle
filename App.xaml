@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:MusicCircle"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="WindowSize" TargetType="Window">
+                <Setter Property="Height" Value="450"/>
+                <Setter Property="Width" Value="800"/>
+        </Style>
     </Application.Resources>
+
 </Application>

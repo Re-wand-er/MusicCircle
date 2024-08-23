@@ -69,20 +69,34 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainPages\QuartoQuintoCirclePage.xaml.cs">
+      <DependentUpon>QuartoQuintoCirclePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPages\VirtualPianoPage.xaml.cs">
+      <DependentUpon>VirtualPianoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\QuartoQuintoCirclePage.xaml.cs">
-      <DependentUpon>QuartoQuintoCirclePage.xaml</DependentUpon>
+    <Compile Include="Settings\CircleSettingsWindow\Pages\PageViewModel\ChordPageVM.cs" />
+    <Compile Include="Settings\CircleSettingsWindow\Pages\PageViewModel\VolumePageVM.cs" />
+    <Compile Include="Settings\CircleSettingsWindow\Pages\PageView\ChordPage.xaml.cs">
+      <DependentUpon>ChordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\VirtualPianoPage.xaml.cs">
-      <DependentUpon>VirtualPianoPage.xaml</DependentUpon>
+    <Compile Include="Settings\CircleSettingsWindow\Pages\PageView\VolumePage.xaml.cs">
+      <DependentUpon>VolumePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\GeneralSettingsWindow.xaml.cs">
+    <Compile Include="Settings\CircleSettingsWindow\QuintoCircleSettingsWindow.xaml.cs">
+      <DependentUpon>QuintoCircleSettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\GeneralSettingsWindow\GeneralSettingsWindow.xaml.cs">
       <DependentUpon>GeneralSettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\QuintoCirclePages\ChordPage.xaml.cs">
-      <DependentUpon>ChordPage.xaml</DependentUpon>
+    <Compile Include="Settings\PageSettingsModel.cs" />
+    <Compile Include="Settings\SettingsButtonCommandModel.cs" />
+    <Compile Include="Settings\SettingsViewModel.cs" />
+    <Compile Include="Settings\VirtualPianoSettingsWindow\VirtualPianoSettingsWindow.xaml.cs">
+      <DependentUpon>VirtualPianoSettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SoundPlayAlghorithms\ChordSound.cs" />
     <Compile Include="Interface\QuartoQuintoCircleInterface\CustomSecterMajorButton.xaml.cs">
@@ -98,6 +112,10 @@
       <DependentUpon>CustomUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SoundPlayAlghorithms\NoteRegex.cs" />
+    <Page Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
     <Page Include="Interface\QuartoQuintoCircleInterface\CustomSecterMajorButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -114,31 +132,35 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainPages\QuartoQuintoCirclePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="MainPages\VirtualPianoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\QuartoQuintoCirclePage.xaml">
+    <Page Include="Settings\CircleSettingsWindow\Pages\PageView\ChordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\VirtualPianoPages\VirtualPianoSettingsWindow.xaml">
+    <Page Include="Settings\CircleSettingsWindow\Pages\PageView\VolumePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\QuintoCirclePages\QuintoCircleSettingsWindow.xaml">
+    <Page Include="Settings\VirtualPianoSettingsWindow\VirtualPianoSettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\VirtualPianoPages\VirtualPianoSettingsWindow.xaml">
+    <Page Include="Settings\CircleSettingsWindow\QuintoCircleSettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\GeneralSettingsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Settings\QuintoCirclePages\ChordPage.xaml">
+    <Page Include="Settings\GeneralSettingsWindow\GeneralSettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,7 +204,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Settings\GeneralPages\" />
+    <Folder Include="Settings\CircleSettingsWindow\Pages\PageModel\" />
+    <Folder Include="Settings\GeneralSettingsWindow\Pages\" />
+    <Folder Include="Settings\VirtualPianoSettingsWindow\Pages\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

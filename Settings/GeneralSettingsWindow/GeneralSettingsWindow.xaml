@@ -1,0 +1,35 @@
+﻿<Window x:Class="MusicCircle.Settings.GeneralSettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MusicCircle.Settings"
+        mc:Ignorable="d"
+        
+        Title="Общие параметры" Height="450" Width="800"> <!--Style="{StaticResource WindowSize}"-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition x:Name="pagesChord" Width="*" MinWidth="200" MaxWidth="230"></ColumnDefinition>
+            <ColumnDefinition x:Name="Splitter" Width="auto"></ColumnDefinition>
+            <ColumnDefinition x:Name="settingsChord" Width="3*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <GridSplitter Grid.Column="1" Width="3" 
+                 Background="LightGray"
+                 HorizontalAlignment="Center" 
+                 VerticalAlignment="Stretch" 
+                 ShowsPreview="False"/>
+        
+        <StackPanel Grid.Column="0" Orientation="Vertical" Background="LightGray">
+        <ListBox x:Name="ListBoxOfSettings" ItemsSource="{Binding TextContent}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
+                        <Button Content="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>

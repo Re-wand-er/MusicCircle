@@ -11,17 +11,19 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel;
 namespace MusicCircle.Settings
 {
-    /// <summary>
-    /// Логика взаимодействия для GeneralSettingsWindow.xaml
-    /// </summary>
-    public partial class GeneralSettingsWindow : Window
+    public partial class QuintoCircleSettingsWindow : Window
     {
-        public GeneralSettingsWindow()
+        public QuintoCircleSettingsWindow()
         {
             InitializeComponent();
+
+            this.DataContext = new SettingsViewModel(
+                new PageSettingsModel("Привет земля", new ChordPageVM()), 
+                new PageSettingsModel("Пока земля", new VolumePageVM())
+            );
         }
     }
 }
