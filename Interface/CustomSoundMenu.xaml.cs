@@ -31,55 +31,31 @@ namespace MusicCircle
         // Не работают
         private void QuartoQuintoCircleSettings_Click(object sender, RoutedEventArgs e)
         {
-            if (_window == null)
-            {
-                _window = new QuintoCircleSettingsWindow();
-                _window.Closed += Window_Closed;
-                _window.ShowDialog();
-            }
-            else
-            {
-                _window.Activate();
-            }
-
-            /*QuintoCircleSettingsWindow circle = new QuintoCircleSettingsWindow();
-            
-            circle.Show();*/
+            OpenWindow(new QuintoCircleSettingsWindow());
         }
 
         private void VirtualPianoSettings_Click(object sender, RoutedEventArgs e)
         {
-            if (_window == null)
-            {
-                _window = new VirtualPianoSettingsWindow();
-                _window.Closed += Window_Closed;
-                _window.ShowDialog();
-            }
-            else
-            {
-                _window.Activate();
-            }
-            /*VirtualPianoSettingsWindow piano = new VirtualPianoSettingsWindow();
-
-             piano.Show();*/
+            OpenWindow(new VirtualPianoSettingsWindow());
         }
 
         private void GeneralSettings_Click(object sender, RoutedEventArgs e)
         {
+            OpenWindow(new GeneralSettingsWindow());
+        }
+
+        private void OpenWindow(Window window)
+        {
             if (_window == null)
             {
-                _window = new GeneralSettingsWindow();
+                _window = window;
                 _window.Closed += Window_Closed;
-                _window.ShowDialog();
+                _window.Show/*Dialog*/();
             }
             else
             {
                 _window.Activate();
             }
-
-            /*GeneralSettingsWindow general = new GeneralSettingsWindow();
-
-            general.Show();*/
         }
 
         private void Window_Closed(object sender, EventArgs e)

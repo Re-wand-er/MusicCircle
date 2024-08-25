@@ -21,7 +21,7 @@ namespace MusicCircle.Settings
             InitializeComponent();
 
             this.DataContext = new SettingsViewModel(
-                new PageSettingsModel("Привет земля", new ChordPageVM()), 
+                new PageSettingsModel("Привет земля ", new ChordPageVM()), 
                 new PageSettingsModel("Пока земля", new VolumePageVM())
             );
         }

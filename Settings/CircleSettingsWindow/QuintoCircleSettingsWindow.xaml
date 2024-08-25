@@ -34,17 +34,29 @@
         <StackPanel Grid.Column="0" Orientation="Vertical" Background="LightGray">
             <ListBox x:Name="ListBoxOfSettings" ItemsSource="{Binding PageSettingsModel}">
                                             <!--ItemsSource="{Binding DataContext.PageSettingsModel, RelativeSource={RelativeSource AncestorType=Window}}"-->
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
-                            <Button Content="{Binding PageTitle}" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding DataContext.PagesClickCommand, RelativeSource={RelativeSource AncestorType=Window}}" CommandParameter="{Binding OpenUserControl}"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
+                <ListBox.Resources>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <Button Content="{Binding PageTitle}"  Height="40"
+                                            Command="{Binding DataContext.PagesClickCommand, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                            CommandParameter="{Binding OpenUserControl}"
+                                            Background="White"
+                                            BorderThickness="1"
+                                            FontSize="15"
+                                            FontStyle="Normal"
+                                            BorderBrush="LightGray"
+                                    />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListBox.Resources>
             </ListBox>
         </StackPanel>
 
 
-        <ContentPresenter Grid.Column="2" Content="{Binding CurrentPage}"/>
+        <ContentPresenter Grid.Column="2" Content="{Binding CurrentView}"/>
     </Grid>
 </Window>

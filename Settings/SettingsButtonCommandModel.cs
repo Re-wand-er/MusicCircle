@@ -12,8 +12,9 @@ namespace MusicCircle.Settings
     internal class SettingsButtonCommandModel : ICommand
     {
         private readonly Action<object> _execute;
+        // Может быть удален, а может и нет
         private readonly Predicate<object> _canExecute;
-        int count = 0;
+        //int count = 0;
 
         public SettingsButtonCommandModel(Action<object> action, Predicate<object> canExecute = null)
         {

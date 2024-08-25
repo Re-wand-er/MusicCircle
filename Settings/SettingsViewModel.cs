@@ -8,17 +8,18 @@ using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel;
 
 namespace MusicCircle.Settings
 {
+    // Идея использовать текущую viewModel Для открытия вообще всех страниц и окон
     internal class SettingsViewModel : INotifyPropertyChanged
     {
-        // Отвечает за отображение текущей страницы
-        private object _currentPage;
-        public object CurrentPage
+        // Отвечает за отображение текущей страницы или окна
+        private object _currentView;
+        public object CurrentView
         {   
-            get { return _currentPage; } 
+            get { return _currentView; } 
             set
             {
-                    _currentPage = value;
-                    OnPropertyChanged(nameof(CurrentPage));
+                    _currentView = value;
+                    OnPropertyChanged(nameof(CurrentView));
             }
         }
         // Хранит VM всех страниц 
@@ -37,18 +38,18 @@ namespace MusicCircle.Settings
         }
         // Команда которая сработает при нажатии кнопки
         public ICommand PagesClickCommand { get; }
-        private void OpenPage(object pages)
-        {
-            CurrentPage = pages;  
-        }
+        
         public SettingsViewModel(params PageSettingsModel[] page)
         {
             foreach(var p in page) PageSettingsModel.Add(p);
-
-            CurrentPage = page[0].OpenUserControl;
+            
+            CurrentView = PageSettingsModel[0].OpenUserControl;
             PagesClickCommand = new SettingsButtonCommandModel(OpenPage);
         }
-        
+        private void OpenPage(object pages)
+        {
+            CurrentView = pages;  
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

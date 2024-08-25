@@ -69,6 +69,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Interface\QuartoQuintoCircleInterface\CustomButton.xaml.cs">
+      <DependentUpon>CustomButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPages\QuartoQuintoCirclePage.xaml.cs">
       <DependentUpon>QuartoQuintoCirclePage.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
+    <Page Include="Interface\QuartoQuintoCircleInterface\CustomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Interface\QuartoQuintoCircleInterface\CustomSecterMajorButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -129,6 +136,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Interface\QuartoQuintoCircleInterface\CustomUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interface\Resources\ColorButtonResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Interface\Resources\RotateTransformResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

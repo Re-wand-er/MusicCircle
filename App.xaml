@@ -4,10 +4,16 @@
              xmlns:local="clr-namespace:MusicCircle"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <Style x:Key="WindowSize" TargetType="Window">
+        <!--<Style x:Key="WindowSize" TargetType="Window">
                 <Setter Property="Height" Value="450"/>
                 <Setter Property="Width" Value="800"/>
-        </Style>
+        </Style>-->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Interface/SectorButtonResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+                
     </Application.Resources>
 
 </Application>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    
+    <!-- Нужно разделить-->
+    <!-- Почему-то привязка отображается, как возможная, и выпадает в списке,
+         но во время запуска выбивает ошибку о не нахождении
+         Одинаково не находит что RotateTransform, что SolidColorBrush-->
+    <RotateTransform x:Key="Rotate000" CenterX="325" CenterY="260" Angle="000"/>
+    <RotateTransform x:Key="Rotate030" CenterX="325" CenterY="260" Angle="030"/>
+    <RotateTransform x:Key="Rotate060" CenterX="325" CenterY="260" Angle="060"/>
+    <RotateTransform x:Key="Rotate090" CenterX="325" CenterY="260" Angle="090"/>
+    <RotateTransform x:Key="Rotate120" CenterX="325" CenterY="260" Angle="120"/>
+    <RotateTransform x:Key="Rotate150" CenterX="325" CenterY="260" Angle="150"/>
+    <RotateTransform x:Key="Rotate180" CenterX="325" CenterY="260" Angle="180"/>
+    <RotateTransform x:Key="Rotate210" CenterX="325" CenterY="260" Angle="210"/>
+    <RotateTransform x:Key="Rotate240" CenterX="325" CenterY="260" Angle="240"/>
+    <RotateTransform x:Key="Rotate270" CenterX="325" CenterY="260" Angle="270"/>
+    <RotateTransform x:Key="Rotate300" CenterX="325" CenterY="260" Angle="300"/>
+    <RotateTransform x:Key="Rotate330" CenterX="325" CenterY="260" Angle="330"/>
+    <RotateTransform x:Key="Rotate360" CenterX="325" CenterY="260" Angle="360"/>
+</ResourceDictionary>
