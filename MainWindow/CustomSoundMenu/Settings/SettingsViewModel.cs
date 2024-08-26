@@ -2,9 +2,6 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using System.Diagnostics;
-using System.Windows;
-using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel;
 
 namespace MusicCircle.Settings
 {

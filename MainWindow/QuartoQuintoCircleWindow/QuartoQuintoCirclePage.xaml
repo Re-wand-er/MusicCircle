@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="600" Height="600" Width="600"
       Title="QuartoQuintoCirclePage">
 
-    <Grid FocusVisualStyle="{x:Null}" Keyboard.KeyDown="button_KeyDown" >
+    <Grid FocusVisualStyle="{x:Null}" Keyboard.KeyDown="button_KeyDown" Margin="0 10">
         <local:CustomSecterMajorButton/>
         <local:CustomSectorMinorButton/>
         <Path Fill="White" StrokeThickness="1" Stroke="#FF707070">

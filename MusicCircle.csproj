@@ -69,49 +69,50 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interface\QuartoQuintoCircleInterface\CustomButton.xaml.cs">
+    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButton.xaml.cs">
       <DependentUpon>CustomButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPages\QuartoQuintoCirclePage.xaml.cs">
+    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButtonProperty.cs" />
+    <Compile Include="MainWindow\QuartoQuintoCircleWindow\QuartoQuintoCirclePage.xaml.cs">
       <DependentUpon>QuartoQuintoCirclePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainPages\VirtualPianoPage.xaml.cs">
+    <Compile Include="MainWindow\VirtualPianoWindow\VirtualPianoPage.xaml.cs">
       <DependentUpon>VirtualPianoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="MainWindow\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\CircleSettingsWindow\Pages\PageViewModel\ChordPageVM.cs" />
-    <Compile Include="Settings\CircleSettingsWindow\Pages\PageViewModel\VolumePageVM.cs" />
-    <Compile Include="Settings\CircleSettingsWindow\Pages\PageView\ChordPage.xaml.cs">
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\ChordPageVM.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\VolumePageVM.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageView\ChordPage.xaml.cs">
       <DependentUpon>ChordPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\CircleSettingsWindow\Pages\PageView\VolumePage.xaml.cs">
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageView\VolumePage.xaml.cs">
       <DependentUpon>VolumePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\CircleSettingsWindow\QuintoCircleSettingsWindow.xaml.cs">
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\QuintoCircleSettingsWindow.xaml.cs">
       <DependentUpon>QuintoCircleSettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\GeneralSettingsWindow\GeneralSettingsWindow.xaml.cs">
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\GeneralSettingsWindow\GeneralSettingsWindow.xaml.cs">
       <DependentUpon>GeneralSettingsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Settings\PageSettingsModel.cs" />
-    <Compile Include="Settings\SettingsButtonCommandModel.cs" />
-    <Compile Include="Settings\SettingsViewModel.cs" />
-    <Compile Include="Settings\VirtualPianoSettingsWindow\VirtualPianoSettingsWindow.xaml.cs">
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\PageSettingsModel.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\SettingsButtonCommandModel.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\SettingsViewModel.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\VirtualPianoSettingsWindow\VirtualPianoSettingsWindow.xaml.cs">
       <DependentUpon>VirtualPianoSettingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="SoundPlayAlghorithms\ChordSound.cs" />
-    <Compile Include="Interface\QuartoQuintoCircleInterface\CustomSecterMajorButton.xaml.cs">
+    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomSecterMajorButton.xaml.cs">
       <DependentUpon>CustomSecterMajorButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interface\QuartoQuintoCircleInterface\CustomSectorMinorButton.xaml.cs">
+    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomSectorMinorButton.xaml.cs">
       <DependentUpon>CustomSectorMinorButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interface\CustomSoundMenu.xaml.cs">
+    <Compile Include="MainWindow\CustomSoundMenu\CustomSoundMenu.xaml.cs">
       <DependentUpon>CustomSoundMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interface\QuartoQuintoCircleInterface\CustomUserControl.xaml.cs">
+    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomUserControl.xaml.cs">
       <DependentUpon>CustomUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SoundPlayAlghorithms\NoteRegex.cs" />
@@ -119,63 +120,63 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="Interface\QuartoQuintoCircleInterface\CustomButton.xaml">
+    <Page Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Interface\QuartoQuintoCircleInterface\CustomSecterMajorButton.xaml">
+    <Page Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomSecterMajorButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Interface\QuartoQuintoCircleInterface\CustomSectorMinorButton.xaml">
+    <Page Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomSectorMinorButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Interface\CustomSoundMenu.xaml">
+    <Page Include="MainWindow\CustomSoundMenu\CustomSoundMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Interface\QuartoQuintoCircleInterface\CustomUserControl.xaml">
+    <Page Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Interface\Resources\ColorButtonResource.xaml">
+    <Page Include="MainWindow\Resources\ColorButtonResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Interface\Resources\RotateTransformResource.xaml">
+    <Page Include="MainWindow\Resources\RotateTransformResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainPages\QuartoQuintoCirclePage.xaml">
+    <Page Include="MainWindow\QuartoQuintoCircleWindow\QuartoQuintoCirclePage.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="MainPages\VirtualPianoPage.xaml">
+    <Page Include="MainWindow\VirtualPianoWindow\VirtualPianoPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="MainWindow\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Settings\CircleSettingsWindow\Pages\PageView\ChordPage.xaml">
+    <Page Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageView\ChordPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\CircleSettingsWindow\Pages\PageView\VolumePage.xaml">
+    <Page Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageView\VolumePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\VirtualPianoSettingsWindow\VirtualPianoSettingsWindow.xaml">
+    <Page Include="MainWindow\CustomSoundMenu\Settings\VirtualPianoSettingsWindow\VirtualPianoSettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\CircleSettingsWindow\QuintoCircleSettingsWindow.xaml">
+    <Page Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\QuintoCircleSettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Settings\GeneralSettingsWindow\GeneralSettingsWindow.xaml">
+    <Page Include="MainWindow\CustomSoundMenu\Settings\GeneralSettingsWindow\GeneralSettingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,9 +220,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Settings\CircleSettingsWindow\Pages\PageModel\" />
-    <Folder Include="Settings\GeneralSettingsWindow\Pages\" />
-    <Folder Include="Settings\VirtualPianoSettingsWindow\Pages\" />
+    <Folder Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageModel\" />
+    <Folder Include="MainWindow\CustomSoundMenu\Settings\GeneralSettingsWindow\Pages\" />
+    <Folder Include="MainWindow\CustomSoundMenu\Settings\VirtualPianoSettingsWindow\Pages\" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

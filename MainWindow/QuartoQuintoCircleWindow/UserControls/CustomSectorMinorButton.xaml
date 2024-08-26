@@ -38,8 +38,33 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Path Name="border" Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding Background}" Data="{StaticResource Geometry}" Stretch="None"/>
-                        <ControlTemplate.Triggers>
+                        <Grid>
+                            <Path Name="border" 
+                                  Stroke="{TemplateBinding BorderBrush}" 
+                                  Fill="{TemplateBinding Background}" 
+                                  Data="{StaticResource Geometry}" />
+
+                            <!--Кастыль на костыле Текст просто подогнан под визуал ручками-->
+                            <Border>
+                                <TextBlock Text="{TemplateBinding Content}" 
+                                       Foreground="Black" 
+                                       FontWeight="Bold" 
+                                       FontSize="16"
+                                       RenderTransformOrigin="0.5,0.5" 
+                                       TextAlignment="Center"
+                                       Margin="443,247,74,326" Width="NaN">
+
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+                            </Border>
+                            </Grid>
+                            <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter Property="Stroke" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
                             </Trigger>
@@ -79,17 +104,17 @@
 
     <Grid x:Name="Circle">
         
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_AMinor_Click" RenderTransform="{StaticResource Rotate270}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_EMinor_Click" RenderTransform="{StaticResource Rotate300}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_BMinor_Click" RenderTransform="{StaticResource Rotate330}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_FsharpMinor_Click" RenderTransform="{StaticResource Rotate000}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_CsharpMinor_Click" RenderTransform="{StaticResource Rotate030}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_GsharpMinor_Click" RenderTransform="{StaticResource Rotate060}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_Eflat_DsharpMinor_Click" RenderTransform="{StaticResource Rotate090}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_BflatMinor_Click" RenderTransform="{StaticResource Rotate120}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_FMinor_Click" RenderTransform="{StaticResource Rotate150}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_CMinor_Click" RenderTransform="{StaticResource Rotate180}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_GMinor_Click" RenderTransform="{StaticResource Rotate210}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_DMinor_Click" RenderTransform="{StaticResource Rotate240}"/>
+        <Button Content="Am" Style="{DynamicResource SectorButtonStyle}" Click="button_AMinor_Click" RenderTransform="{StaticResource Rotate270}"/>
+        <Button Content="Em" Style="{DynamicResource SectorButtonStyle}" Click="button_EMinor_Click" RenderTransform="{StaticResource Rotate300}"/>
+        <Button Content="Bm" Style="{DynamicResource SectorButtonStyle}" Click="button_BMinor_Click" RenderTransform="{StaticResource Rotate330}"/>
+        <Button Content="F#m" Style="{DynamicResource SectorButtonStyle}" Click="button_FsharpMinor_Click" RenderTransform="{StaticResource Rotate000}"/>
+        <Button Content="C#m" Style="{DynamicResource SectorButtonStyle}" Click="button_CsharpMinor_Click" RenderTransform="{StaticResource Rotate030}"/>
+        <Button Content="G#m" Style="{DynamicResource SectorButtonStyle}" Click="button_GsharpMinor_Click" RenderTransform="{StaticResource Rotate060}"/>
+        <Button Content="Ebm/D#m" Style="{DynamicResource SectorButtonStyle}" Click="button_Eflat_DsharpMinor_Click" RenderTransform="{StaticResource Rotate090}"/>
+        <Button Content="Bbm" Style="{DynamicResource SectorButtonStyle}" Click="button_BflatMinor_Click" RenderTransform="{StaticResource Rotate120}"/>
+        <Button Content="Fm" Style="{DynamicResource SectorButtonStyle}" Click="button_FMinor_Click" RenderTransform="{StaticResource Rotate150}"/>
+        <Button Content="Cm" Style="{DynamicResource SectorButtonStyle}" Click="button_CMinor_Click" RenderTransform="{StaticResource Rotate180}"/>
+        <Button Content="Gm" Style="{DynamicResource SectorButtonStyle}" Click="button_GMinor_Click" RenderTransform="{StaticResource Rotate210}"/>
+        <Button Content="Dm" Style="{DynamicResource SectorButtonStyle}" Click="button_DMinor_Click" RenderTransform="{StaticResource Rotate240}"/>
     </Grid>
 </UserControl>

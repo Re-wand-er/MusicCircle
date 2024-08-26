@@ -40,7 +40,52 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Path Name="border" Stroke="{TemplateBinding BorderBrush}" Fill="{TemplateBinding Background}" Data="{StaticResource Geometry}" />
+                        <Grid>
+                            <Path Name="border" 
+                      Stroke="{TemplateBinding BorderBrush}" 
+                      Fill="{TemplateBinding Background}" 
+                      Data="{StaticResource Geometry}" />
+
+                            <!-- TextBlock почему-то странно себя ведет.
+                     При увеличении текста в свойстве Text этот самый текст ползет вверх-->
+
+                            <!--Работает почти-->
+                            <!-- <Label Content="{TemplateBinding Content}" 
+                           Foreground="Black" 
+                           FontWeight="Bold" 
+                           FontSize="16"
+                           RenderTransformOrigin="0.5,0.5" 
+                           Margin="525,243,243,172">
+
+                        <Label.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="90"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Label.RenderTransform>
+                    </Label>-->
+
+                            <!--Кастыль на костыле Текст просто подогнан под визуал ручками-->
+                            <TextBlock Text="{TemplateBinding Content}" 
+                                       Foreground="Black" 
+                                       FontWeight="Bold" 
+                                       FontSize="18"
+                                       RenderTransformOrigin="0.5,0.5" 
+                                       TextAlignment="Center"
+                                       Margin="510,247,22,326" Width="NaN">
+
+                                <TextBlock.RenderTransform>
+                                    <TransformGroup>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+                        </Grid>
+
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsDefaulted" Value="true">
                                 <Setter Property="Stroke" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
@@ -58,6 +103,7 @@
                                 <Setter Property="Stroke" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
                             </Trigger>
                         </ControlTemplate.Triggers>
+
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
@@ -85,17 +131,18 @@
             Возможно дабавление текста из вне в xaml коде 
             https://ru.stackoverflow.com/questions/852546/wpf-%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D1%82%D0%B8%D0%BB%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8-->
 
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_CMajor_Click" RenderTransform="{StaticResource Rotate270}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_GMagor_Click" RenderTransform="{StaticResource Rotate300}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_DMajor_Click" RenderTransform="{StaticResource Rotate330}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_AMajor_Click" RenderTransform="{StaticResource Rotate000}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_EMajor_Click" RenderTransform="{StaticResource Rotate030}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_BMajor_Click" RenderTransform="{StaticResource Rotate060}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_Gflat_FsharpMajor_Click" RenderTransform="{StaticResource Rotate090}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_DflatMajor_Click" RenderTransform="{StaticResource Rotate120}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_AflatMajor_Click" RenderTransform="{StaticResource Rotate150}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_EflatMajor_Click" RenderTransform="{StaticResource Rotate180}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_BflatMajor_Click" RenderTransform="{StaticResource Rotate210}"/>
-        <Button Style="{DynamicResource SectorButtonStyle}" Click="button_FMajor_Click" RenderTransform="{StaticResource Rotate240}"/>
+        <!--Забыл что весь текст перевернется при повороте кнопки-->
+        <Button Content="C" Style="{DynamicResource SectorButtonStyle}" Click="button_CMajor_Click" RenderTransform="{StaticResource Rotate270}"/>
+        <Button Content="G" Style="{DynamicResource SectorButtonStyle}" Click="button_GMagor_Click" RenderTransform="{StaticResource Rotate300}"/>
+        <Button Content="D" Style="{DynamicResource SectorButtonStyle}" Click="button_DMajor_Click" RenderTransform="{StaticResource Rotate330}"/>
+        <Button Content="A" Style="{DynamicResource SectorButtonStyle}" Click="button_AMajor_Click" RenderTransform="{StaticResource Rotate000}"/>
+        <Button Content="E" Style="{DynamicResource SectorButtonStyle}" Click="button_EMajor_Click" RenderTransform="{StaticResource Rotate030}"/>
+        <Button Content="B" Style="{DynamicResource SectorButtonStyle}" Click="button_BMajor_Click" RenderTransform="{StaticResource Rotate060}"/>
+        <Button Content="Gb/F#" Style="{DynamicResource SectorButtonStyle}" Click="button_Gflat_FsharpMajor_Click" RenderTransform="{StaticResource Rotate090}"/>
+        <Button Content="Db" Style="{DynamicResource SectorButtonStyle}" Click="button_DflatMajor_Click" RenderTransform="{StaticResource Rotate120}"/>
+        <Button Content="Ab" Style="{DynamicResource SectorButtonStyle}" Click="button_AflatMajor_Click" RenderTransform="{StaticResource Rotate150}"/>
+        <Button Content="Eb" Style="{DynamicResource SectorButtonStyle}" Click="button_EflatMajor_Click" RenderTransform="{StaticResource Rotate180}"/>
+        <Button Content="Bb" Style="{DynamicResource SectorButtonStyle}" Click="button_BflatMajor_Click" RenderTransform="{StaticResource Rotate210}"/>
+        <Button Content="F" Style="{DynamicResource SectorButtonStyle}" Click="button_FMajor_Click" RenderTransform="{StaticResource Rotate240}"/>
     </Grid>
 </UserControl>
