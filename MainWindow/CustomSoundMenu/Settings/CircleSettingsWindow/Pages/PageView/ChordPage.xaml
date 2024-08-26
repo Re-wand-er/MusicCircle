@@ -4,12 +4,48 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageView"
+             xmlns:vm="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="White">
-        <!--<Button Content="Иннокентий"/>-->
-        <DataGrid>
+             d:DesignHeight="800" d:DesignWidth="800">
+    
+    <UserControl.DataContext>
+        <vm:ChordPageVM/>
+    </UserControl.DataContext>
+    
+    <UserControl.Resources>
+        <Style x:Key="ColumnTitles" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </UserControl.Resources>
+
+        <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <Grid Background="White" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Button Content="Иннокентий"/>-->
+                <!--
+                    <DataGrid AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn IsReadOnly="True"/>
+                        <DataGridTextColumn Header="asdf"/>
+                        <DataGridTextColumn Header="asdf"/>
+                    </DataGrid.Columns>
             
-        </DataGrid>
-    </Grid>
+                    
+                </DataGrid>
+                -->
+
+                <!-- Создается usercontrol содержащий textblock textbox textbox? и множество раз открываются 
+                     возможно преимущественней использовать datagrid-->
+                    <TextBlock Style="{StaticResource ColumnTitles}" Grid.Column="0" HorizontalAlignment="Center" Text="Оригинальное название тонального сектора"></TextBlock>
+                <TextBlock Style="{StaticResource ColumnTitles}" Grid.Column="1" HorizontalAlignment="Center" Text="Название тонального сектора"></TextBlock>
+                <TextBlock Style="{StaticResource ColumnTitles}" Grid.Column="2" HorizontalAlignment="Center" Text="Ноты входящие в аккрод"></TextBlock>
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
+
