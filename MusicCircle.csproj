@@ -69,6 +69,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\MajorTonality.xaml.cs">
+      <DependentUpon>MajorTonality.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButton.xaml.cs">
       <DependentUpon>CustomButton.xaml</DependentUpon>
     </Compile>
@@ -79,7 +82,7 @@
     <Compile Include="MainWindow\VirtualPianoWindow\VirtualPianoPage.xaml.cs">
       <DependentUpon>VirtualPianoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\ChordPageVM.cs" />
@@ -120,6 +123,10 @@
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
+    <Page Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\MajorTonality.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,7 +163,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="MainWindow\MainWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
