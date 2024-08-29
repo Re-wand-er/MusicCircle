@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls.TonalitySettings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <Style x:Key="GeneralStyle" TargetType="FrameworkElement">
+            <Setter Property="Margin" Value="3 0 3 0"/>
+        </Style>
+    </UserControl.Resources>
+    
+    <StackPanel>
+        <StackPanel Background="White" Orientation="Horizontal">
+            <TextBlock Style="{StaticResource GeneralStyle}" TextAlignment="Right" Text="{Binding OriginalNameOfTonality}" Width="50"/>
+            <TextBox   Style="{StaticResource GeneralStyle}" Width="150" Text="{Binding DescriptionOfTonality}"/>
+            <Grid>
+                <TextBox   Style="{StaticResource GeneralStyle}" Width="200" 
+                         Text="{Binding NotesOfTonality}">
+                    <!--IsSelectionActive-->
+                    <TextBox.ToolTip>
+                        Введите названия нот. Например: A E G
+                    </TextBox.ToolTip>
+                </TextBox>
+            </Grid>
+            <Button    Style="{StaticResource GeneralStyle}" Content="Картинка" Command="{Binding TestCommand}"/>
+        </StackPanel>
+    </StackPanel>
+</UserControl>

@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace MusicCircle.Interface.QuartoQuintoCircleInterface
+namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls
 {
     /// <summary>
-    /// Логика взаимодействия для CustomButton.xaml
+    /// Логика взаимодействия для MajorTonality.xaml
     /// </summary>
-    public partial class CustomButton : UserControl
+    public partial class TonalitySettings : UserControl
     {
-        public CustomButton()
+        public TonalitySettings()
         {
             InitializeComponent();
         }

@@ -69,12 +69,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\MajorTonality.xaml.cs">
-      <DependentUpon>MajorTonality.xaml</DependentUpon>
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageModel\ChordPageModel.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\TonalitySettings.xaml.cs">
+      <DependentUpon>TonalitySettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButton.xaml.cs">
-      <DependentUpon>CustomButton.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\TonalitySettingsVM.cs" />
     <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButtonProperty.cs" />
     <Compile Include="MainWindow\QuartoQuintoCircleWindow\QuartoQuintoCirclePage.xaml.cs">
       <DependentUpon>QuartoQuintoCirclePage.xaml</DependentUpon>
@@ -115,19 +114,12 @@
     <Compile Include="MainWindow\CustomSoundMenu\CustomSoundMenu.xaml.cs">
       <DependentUpon>CustomSoundMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomUserControl.xaml.cs">
-      <DependentUpon>CustomUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="SoundPlayAlghorithms\NoteRegex.cs" />
     <Page Include="App.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>
     </Page>
-    <Page Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\MajorTonality.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButton.xaml">
+    <Page Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\TonalitySettings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,10 +132,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow\CustomSoundMenu\CustomSoundMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -227,7 +215,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageModel\" />
     <Folder Include="MainWindow\CustomSoundMenu\Settings\GeneralSettingsWindow\Pages\" />
     <Folder Include="MainWindow\CustomSoundMenu\Settings\VirtualPianoSettingsWindow\Pages\" />
   </ItemGroup>
