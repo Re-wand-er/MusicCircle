@@ -44,6 +44,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
                 OnPropertyChanged(nameof(NotesOfTonality));
             }
         }
+        public int IndexProperty {  get; set; }
         public ICommand TestCommand { get; }
         public TonalitySettingsVM() 
         {

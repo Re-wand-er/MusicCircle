@@ -3,17 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:MusicCircle.Interface"
+             xmlns:local="clr-namespace:MusicCircle.QuartoQuintoCircleWindow.UserControls"
+             xmlns:vm="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="650" Height="600" Width="600">
+
+    <UserControl.DataContext>
+       <!-- <vm:ChordPageVM/>-->
+        <vm:ChordPageVM/>
+        <!--<local:RotateConverter x:Name="rotateConverter"/>-->
+    </UserControl.DataContext>
+    
     <UserControl.Resources >
+
+        <local:RotateConverter x:Key="rotateConverter"/>
 
         <StreamGeometry x:Key="Geometry">
             M 325,260 L 566,325 A 250,250 0 0 0 566,195 Z
         </StreamGeometry>
-
-
-
+        
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -33,7 +41,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background"  Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border"      Color="#FFADB2B5"/>
 
-        <Style x:Key="SectorButtonStyle" TargetType="{x:Type Button}">
+        <Style  TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -131,18 +139,49 @@
             Возможно дабавление текста из вне в xaml коде 
             https://ru.stackoverflow.com/questions/852546/wpf-%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D1%82%D0%B8%D0%BB%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8-->
 
-        <!--Забыл что весь текст перевернется при повороте кнопки-->
-        <Button Content="C" Style="{DynamicResource SectorButtonStyle}" Click="button_CMajor_Click" RenderTransform="{StaticResource Rotate270}"/>
-        <Button Content="G" Style="{DynamicResource SectorButtonStyle}" Click="button_GMagor_Click" RenderTransform="{StaticResource Rotate300}"/>
-        <Button Content="D" Style="{DynamicResource SectorButtonStyle}" Click="button_DMajor_Click" RenderTransform="{StaticResource Rotate330}"/>
-        <Button Content="A" Style="{DynamicResource SectorButtonStyle}" Click="button_AMajor_Click" RenderTransform="{StaticResource Rotate000}"/>
-        <Button Content="E" Style="{DynamicResource SectorButtonStyle}" Click="button_EMajor_Click" RenderTransform="{StaticResource Rotate030}"/>
-        <Button Content="B" Style="{DynamicResource SectorButtonStyle}" Click="button_BMajor_Click" RenderTransform="{StaticResource Rotate060}"/>
-        <Button Content="Gb/F#" Style="{DynamicResource SectorButtonStyle}" Click="button_Gflat_FsharpMajor_Click" RenderTransform="{StaticResource Rotate090}"/>
-        <Button Content="Db" Style="{DynamicResource SectorButtonStyle}" Click="button_DflatMajor_Click" RenderTransform="{StaticResource Rotate120}"/>
-        <Button Content="Ab" Style="{DynamicResource SectorButtonStyle}" Click="button_AflatMajor_Click" RenderTransform="{StaticResource Rotate150}"/>
-        <Button Content="Eb" Style="{DynamicResource SectorButtonStyle}" Click="button_EflatMajor_Click" RenderTransform="{StaticResource Rotate180}"/>
-        <Button Content="Bb" Style="{DynamicResource SectorButtonStyle}" Click="button_BflatMajor_Click" RenderTransform="{StaticResource Rotate210}"/>
-        <Button Content="F" Style="{DynamicResource SectorButtonStyle}" Click="button_FMajor_Click" RenderTransform="{StaticResource Rotate240}"/>
+        <ItemsControl ItemsSource="{Binding OriganalMajorTonalityName}">
+            <!--<ItemsControl.Resources>
+                <x:Array x:Key="RotateTransformsArray" Type="{x:Type RotateTransform}">
+                    <StaticResource ResourceKey="Rotate270" />
+                    <StaticResource ResourceKey="Rotate300" />
+                    <StaticResource ResourceKey="Rotate330" />
+                    <StaticResource ResourceKey="Rotate000" />
+                    <StaticResource ResourceKey="Rotate030" />
+                    <StaticResource ResourceKey="Rotate060" />
+                    <StaticResource ResourceKey="Rotate090" />
+                    <StaticResource ResourceKey="Rotate120" />
+                    <StaticResource ResourceKey="Rotate150" />
+                    <StaticResource ResourceKey="Rotate180" />
+                    <StaticResource ResourceKey="Rotate210" />
+                    <StaticResource ResourceKey="Rotate240" />
+                </x:Array>
+            </ItemsControl.Resources>-->
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button 
+                            Content="{Binding DescriptionOfTonality, UpdateSourceTrigger=PropertyChanged}"
+                            RenderTransform="{StaticResource Rotate270}"
+                            Click="button_CMajor_Click">
+                    </Button>
+                    
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!--Забыл что весь текст перевернется при повороте кнопки
+        Вопрос: Как каждому элементу в itemcontrol задать особенные значения например заданные заранее staticresources -->
+        <!--<Button Content="С"      Click="button_CMajor_Click"            RenderTransform="{StaticResource Rotate270}"/>
+        <Button Content="G"      Click="button_GMagor_Click"            RenderTransform="{StaticResource Rotate300}"/>
+        <Button Content="D"      Click="button_DMajor_Click"            RenderTransform="{StaticResource Rotate330}"/>
+        <Button Content="A"      Click="button_AMajor_Click"            RenderTransform="{StaticResource Rotate000}"/>
+        <Button Content="E"      Click="button_EMajor_Click"            RenderTransform="{StaticResource Rotate030}"/>
+        <Button Content="B"      Click="button_BMajor_Click"            RenderTransform="{StaticResource Rotate060}"/>
+        <Button Content="Gb/F#"  Click="button_Gflat_FsharpMajor_Click" RenderTransform="{StaticResource Rotate090}"/>
+        <Button Content="Db"     Click="button_DflatMajor_Click"        RenderTransform="{StaticResource Rotate120}"/>
+        <Button Content="Ab"     Click="button_AflatMajor_Click"        RenderTransform="{StaticResource Rotate150}"/>
+        <Button Content="Eb"     Click="button_EflatMajor_Click"        RenderTransform="{StaticResource Rotate180}"/>
+        <Button Content="Bb"     Click="button_BflatMajor_Click"        RenderTransform="{StaticResource Rotate210}"/>
+        <Button Content="F"      Click="button_FMajor_Click"            RenderTransform="{StaticResource Rotate240}"/>-->
     </Grid>
 </UserControl>

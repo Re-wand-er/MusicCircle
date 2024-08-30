@@ -1,4 +1,6 @@
-﻿using System.Windows.Controls;
+﻿using MusicCircle.Interface;
+using System.Runtime.CompilerServices;
+using System.Windows.Controls;
 
 namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageView
 {
@@ -10,7 +12,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageView
         public ChordPage()
         {
             InitializeComponent();
-            DataContext = new PageViewModel.ChordPageVM();
+            //this.DataContext = CustomSecterMajorButton.
         }
     }
 }

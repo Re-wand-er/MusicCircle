@@ -7,11 +7,12 @@
              xmlns:vm="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel"
              xmlns:uc="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls"
              mc:Ignorable="d" 
+             
              d:DesignHeight="800" d:DesignWidth="800">
 
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <vm:ChordPageVM/>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
 
     <UserControl.Resources>
         <Style x:Key="ColumnTitles" TargetType="{x:Type TextBlock}">

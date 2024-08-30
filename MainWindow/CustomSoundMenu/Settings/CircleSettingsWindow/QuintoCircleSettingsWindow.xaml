@@ -32,8 +32,8 @@
                       ShowsPreview="False"/>
 
         <StackPanel Grid.Column="0" Orientation="Vertical" Background="LightGray">
-            <ListBox x:Name="ListBoxOfSettings" ItemsSource="{Binding PageSettingsModel}">
-                                            <!--ItemsSource="{Binding DataContext.PageSettingsModel, RelativeSource={RelativeSource AncestorType=Window}}"-->
+            <ListBox x:Name="ListBoxOfSettings" ItemsSource="{Binding DataContext.PageSettingsModel, RelativeSource={RelativeSource AncestorType=Window}}">
+                                            <!--ItemsSource="{Binding PageSettinModel}"-->
                 <ListBox.Resources>
                     <Style TargetType="ListBoxItem">
                         <Setter Property="Template">

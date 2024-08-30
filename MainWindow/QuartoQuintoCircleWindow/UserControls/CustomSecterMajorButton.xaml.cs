@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls;
 using MusicCircle.SoundPlayAlghorithms;
 
 namespace MusicCircle.Interface
@@ -12,10 +14,10 @@ namespace MusicCircle.Interface
     /// </summary>
     public partial class CustomSecterMajorButton : UserControl
     {
+        
         public CustomSecterMajorButton()
         {
             InitializeComponent();
-
             //CreateSymmetricSector(325,260, 193, -15, 15);
         }
 

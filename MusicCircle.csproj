@@ -78,6 +78,7 @@
     <Compile Include="MainWindow\QuartoQuintoCircleWindow\QuartoQuintoCirclePage.xaml.cs">
       <DependentUpon>QuartoQuintoCirclePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\RotateConverter.cs" />
     <Compile Include="MainWindow\VirtualPianoWindow\VirtualPianoPage.xaml.cs">
       <DependentUpon>VirtualPianoPage.xaml</DependentUpon>
     </Compile>
