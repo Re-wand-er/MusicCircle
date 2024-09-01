@@ -15,13 +15,13 @@
     <StackPanel>
         <StackPanel Background="White" Orientation="Horizontal">
             <TextBlock Style="{StaticResource GeneralStyle}" TextAlignment="Right" Text="{Binding OriginalNameOfTonality}" Width="50"/>
-            <TextBox   Style="{StaticResource GeneralStyle}" Width="150" Text="{Binding DescriptionOfTonality}"/>
+            <TextBox   Style="{StaticResource GeneralStyle}" Width="150" Text="{Binding DescriptionOfTonality, UpdateSourceTrigger=PropertyChanged}"/>
             <Grid>
-                <TextBox   Style="{StaticResource GeneralStyle}" Width="200" 
-                         Text="{Binding NotesOfTonality}">
-                    <!--IsSelectionActive-->
+                <TextBox Style="{StaticResource GeneralStyle}" Width="200" 
+                         Text="{Binding NotesOfTonality,UpdateSourceTrigger=PropertyChanged}">
+                    
                     <TextBox.ToolTip>
-                        Введите названия нот. Например: A E G
+                        Введите названия нот. Например: A E G. Обязательно через пробел
                     </TextBox.ToolTip>
                 </TextBox>
             </Grid>

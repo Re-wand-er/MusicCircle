@@ -10,10 +10,9 @@
         </Style>-->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/Interface/SectorButtonResource.xaml"/>
+                <ResourceDictionary Source="/MainWindow/Resources/RotateTransformResource.xaml"/>
+                <ResourceDictionary Source="/MainWindow/Resources/ColorButtonResource.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-                
     </Application.Resources>
-
 </Application>

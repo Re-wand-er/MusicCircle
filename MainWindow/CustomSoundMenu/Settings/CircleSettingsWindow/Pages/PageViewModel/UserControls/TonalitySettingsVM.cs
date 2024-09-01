@@ -12,9 +12,13 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
 {
     internal class TonalitySettingsVM : INotifyPropertyChanged
     {
-
         public static int count;
-        private string _originalNameOfTonality;
+        
+        string _originalNameOfTonality;
+        string _descriptionOfTonality;
+        string _notesOfTonality;
+        int _angleProperty;
+
         public string OriginalNameOfTonality
         {
             get => _originalNameOfTonality;
@@ -24,7 +28,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
                 OnPropertyChanged(nameof(OriginalNameOfTonality));
             }
         }
-        private string _descriptionOfTonality;
+
         public string DescriptionOfTonality 
         { 
             get=> _descriptionOfTonality;
@@ -34,7 +38,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
                 OnPropertyChanged(nameof(DescriptionOfTonality));
             }
         }
-        private string _notesOfTonality;
+        
         public string NotesOfTonality 
         {
             get => _notesOfTonality;
@@ -44,11 +48,22 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
                 OnPropertyChanged(nameof(NotesOfTonality));
             }
         }
-        public int IndexProperty {  get; set; }
+        
+        public int Angle 
+        { 
+            get => _angleProperty;
+            set 
+            { 
+                _angleProperty = value; 
+                //OnPropertyChanged(nameof(Index)); 
+            }
+        }
+
+
         public ICommand TestCommand { get; }
         public TonalitySettingsVM() 
         {
-            TestCommand = new SettingsButtonCommandModel(Message);
+            TestCommand = new SettingsButtonCommandModel<object>(Message);
             count++;
         }
 

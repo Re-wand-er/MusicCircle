@@ -5,23 +5,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MusicCircle.QuartoQuintoCircleWindow.UserControls"
              xmlns:vm="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel"
-             mc:Ignorable="d" 
-             d:DesignHeight="600" d:DesignWidth="650" Height="600" Width="600">
+             mc:Ignorable="d" >
 
-    <UserControl.DataContext>
-       <!-- <vm:ChordPageVM/>-->
+    <!--<UserControl.DataContext>
         <vm:ChordPageVM/>
-        <!--<local:RotateConverter x:Name="rotateConverter"/>-->
-    </UserControl.DataContext>
-    
-    <UserControl.Resources >
+    </UserControl.DataContext>-->
 
-        <local:RotateConverter x:Key="rotateConverter"/>
+    <UserControl.Resources >
 
         <StreamGeometry x:Key="Geometry">
             M 325,260 L 566,325 A 250,250 0 0 0 566,195 Z
         </StreamGeometry>
-        
+        <SolidColorBrush x:Key="Button.Static.Background"    Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border"        Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border"     Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background"   Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border"       Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background"  Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border"      Color="#FFADB2B5"/>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -31,16 +33,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
-        <SolidColorBrush x:Key="Button.Static.Background"    Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border"        Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border"     Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background"   Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border"       Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background"  Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border"      Color="#FFADB2B5"/>
-
         <Style  TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
@@ -50,9 +42,9 @@
                     <ControlTemplate TargetType="{x:Type Button}">
                         <Grid>
                             <Path Name="border" 
-                      Stroke="{TemplateBinding BorderBrush}" 
-                      Fill="{TemplateBinding Background}" 
-                      Data="{StaticResource Geometry}" />
+                                  Stroke="{TemplateBinding BorderBrush}" 
+                                  Fill="{TemplateBinding Background}" 
+                                  Data="{StaticResource Geometry}" />
 
                             <!-- TextBlock почему-то странно себя ведет.
                      При увеличении текста в свойстве Text этот самый текст ползет вверх-->
@@ -75,19 +67,21 @@
                         </Label.RenderTransform>
                     </Label>-->
 
-                            <!--Кастыль на костыле Текст просто подогнан под визуал ручками-->
+                            <!--Кастыль на костыле Текст просто подогнан под визуал ручками
+                            Это пиздец я пока не понял как но когда-нибудь-->
                             <TextBlock Text="{TemplateBinding Content}" 
                                        Foreground="Black" 
                                        FontWeight="Bold" 
                                        FontSize="18"
                                        RenderTransformOrigin="0.5,0.5" 
                                        TextAlignment="Center"
-                                       Margin="510,247,22,326" Width="NaN">
+                                       Margin="469,232,13,291" Width="100">
 
                                 <TextBlock.RenderTransform>
                                     <TransformGroup>
                                         <SkewTransform/>
                                         <RotateTransform Angle="90"/>
+                                        <!-- CenterX="325" CenterY="260"-->
                                         <TranslateTransform/>
                                     </TransformGroup>
                                 </TextBlock.RenderTransform>
@@ -110,6 +104,13 @@
                                 <Setter Property="Fill" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
                                 <Setter Property="Stroke" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
                             </Trigger>
+                            <!--<DataTrigger Binding="{Binding Angle}" Value="0">
+                                <Setter Property="RenderTransform" Value="{StaticResource Rotate270}"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Index}" Value="1">
+                                <Setter Property="RenderTransform" Value="{StaticResource Rotate300}"/>
+                            </DataTrigger>-->
+                            
                         </ControlTemplate.Triggers>
 
                     </ControlTemplate>
@@ -117,20 +118,19 @@
             </Setter>
 
         </Style>
-
-        <RotateTransform x:Key="Rotate000" CenterX="325" CenterY="260" Angle="000"/>
-        <RotateTransform x:Key="Rotate030" CenterX="325" CenterY="260" Angle="030"/>
-        <RotateTransform x:Key="Rotate060" CenterX="325" CenterY="260" Angle="060"/>
-        <RotateTransform x:Key="Rotate090" CenterX="325" CenterY="260" Angle="090"/>
-        <RotateTransform x:Key="Rotate120" CenterX="325" CenterY="260" Angle="120"/>
-        <RotateTransform x:Key="Rotate150" CenterX="325" CenterY="260" Angle="150"/>
-        <RotateTransform x:Key="Rotate180" CenterX="325" CenterY="260" Angle="180"/>
-        <RotateTransform x:Key="Rotate210" CenterX="325" CenterY="260" Angle="210"/>
-        <RotateTransform x:Key="Rotate240" CenterX="325" CenterY="260" Angle="240"/>
-        <RotateTransform x:Key="Rotate270" CenterX="325" CenterY="260" Angle="270"/>
-        <RotateTransform x:Key="Rotate300" CenterX="325" CenterY="260" Angle="300"/>
-        <RotateTransform x:Key="Rotate330" CenterX="325" CenterY="260" Angle="330"/>
-        <RotateTransform x:Key="Rotate360" CenterX="325" CenterY="260" Angle="360"/>
+        <RotateTransform x:Key="Rotate000" CenterX="325" CenterY="260"  Angle="000"/>
+        <RotateTransform x:Key="Rotate030" CenterX="325" CenterY="260"  Angle="030"/>
+        <RotateTransform x:Key="Rotate060" CenterX="325" CenterY="260"  Angle="060"/>
+        <RotateTransform x:Key="Rotate090" CenterX="325" CenterY="260"  Angle="090"/>
+        <RotateTransform x:Key="Rotate120" CenterX="325" CenterY="260"  Angle="120"/>
+        <RotateTransform x:Key="Rotate150" CenterX="325" CenterY="260"  Angle="150"/>
+        <RotateTransform x:Key="Rotate180" CenterX="325" CenterY="260"  Angle="180"/>
+        <RotateTransform x:Key="Rotate210" CenterX="325" CenterY="260"  Angle="210"/>
+        <RotateTransform x:Key="Rotate240" CenterX="325" CenterY="260"  Angle="240"/>
+        <RotateTransform x:Key="Rotate270" CenterX="325" CenterY="260"  Angle="270"/>
+        <RotateTransform x:Key="Rotate300" CenterX="325" CenterY="260"  Angle="300"/>
+        <RotateTransform x:Key="Rotate330" CenterX="325" CenterY="260"  Angle="330"/>
+        <RotateTransform x:Key="Rotate360" CenterX="325" CenterY="260"  Angle="360"/>
     </UserControl.Resources>
 
 
@@ -140,33 +140,34 @@
             https://ru.stackoverflow.com/questions/852546/wpf-%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%83%D0%BD%D0%B8%D0%B2%D0%B5%D1%80%D1%81%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D1%81%D1%82%D0%B8%D0%BB%D1%8F-%D0%B4%D0%BB%D1%8F-%D0%BA%D0%BD%D0%BE%D0%BF%D0%BA%D0%B8-->
 
         <ItemsControl ItemsSource="{Binding OriganalMajorTonalityName}">
-            <!--<ItemsControl.Resources>
-                <x:Array x:Key="RotateTransformsArray" Type="{x:Type RotateTransform}">
-                    <StaticResource ResourceKey="Rotate270" />
-                    <StaticResource ResourceKey="Rotate300" />
-                    <StaticResource ResourceKey="Rotate330" />
-                    <StaticResource ResourceKey="Rotate000" />
-                    <StaticResource ResourceKey="Rotate030" />
-                    <StaticResource ResourceKey="Rotate060" />
-                    <StaticResource ResourceKey="Rotate090" />
-                    <StaticResource ResourceKey="Rotate120" />
-                    <StaticResource ResourceKey="Rotate150" />
-                    <StaticResource ResourceKey="Rotate180" />
-                    <StaticResource ResourceKey="Rotate210" />
-                    <StaticResource ResourceKey="Rotate240" />
-                </x:Array>
-            </ItemsControl.Resources>-->
+            <ItemsControl.Resources>
+                
+                
+            </ItemsControl.Resources>
 
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Button 
-                            Content="{Binding DescriptionOfTonality, UpdateSourceTrigger=PropertyChanged}"
-                            RenderTransform="{StaticResource Rotate270}"
-                            Click="button_CMajor_Click">
+                            Content="{Binding DescriptionOfTonality}"
+                            Command="{Binding DataContext.SoundCommand, 
+                                  RelativeSource={RelativeSource AncestorType=UserControl}}"
+                            CommandParameter="{Binding NotesOfTonality}">
+                        <!--mvvm идет нахер-->
+                        <Button.RenderTransform>
+                            <RotateTransform Angle="{Binding Angle}" CenterX="325" CenterY="260">
+                                
+                            </RotateTransform>
+                        </Button.RenderTransform>
                     </Button>
-                    
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
+            
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            
         </ItemsControl>
 
         <!--Забыл что весь текст перевернется при повороте кнопки

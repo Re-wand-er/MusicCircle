@@ -12,6 +12,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageView
         public ChordPage()
         {
             InitializeComponent();
+            this.DataContext = GlobalService.Instance.ChordPage;
             //this.DataContext = CustomSecterMajorButton.
         }
     }

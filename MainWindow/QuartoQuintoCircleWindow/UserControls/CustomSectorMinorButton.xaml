@@ -4,8 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MusicCircle.Interface"
+             xmlns:vm="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel"
              mc:Ignorable="d" 
             d:DesignHeight="600" d:DesignWidth="650" Height="600" Width="600">
+
+    <!--<UserControl.DataContext>
+        <vm:ChordPageVM/>
+    </UserControl.DataContext>-->
+    
     <UserControl.Resources >
 
         <StreamGeometry x:Key="Geometry">
@@ -13,7 +19,14 @@
             <!-- M 325,260 L 513,310 A 195,195 0 0 0 513,210 Z - Button little smaller -->
             M 325,260 L 511,310 A 193,193 0 0 0 511,210 Z
         </StreamGeometry>
-
+        <SolidColorBrush x:Key="Button.Static.Background"    Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border"        Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border"     Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background"   Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border"       Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background"  Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border"      Color="#FFADB2B5"/>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
                 <Setter.Value>
@@ -23,15 +36,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-        <Style x:Key="SectorButtonStyle" TargetType="{x:Type Button}">
+        <Style TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -103,8 +108,39 @@
 
 
     <Grid x:Name="Circle">
-        
-        <Button Content="Am" Style="{DynamicResource SectorButtonStyle}" Click="button_AMinor_Click" RenderTransform="{StaticResource Rotate270}"/>
+
+        <ItemsControl ItemsSource="{Binding OriganalMinorTonalityName}">
+            <ItemsControl.Resources>
+
+
+            </ItemsControl.Resources>
+
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Button 
+                    Content="{Binding DescriptionOfTonality}"
+                    Command="{Binding DataContext.SoundCommand, 
+                          RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    CommandParameter="{Binding NotesOfTonality}">
+                        <!--mvvm идет нахер-->
+                        <Button.RenderTransform>
+                            <RotateTransform Angle="{Binding Angle}" CenterX="325" CenterY="260">
+
+                            </RotateTransform>
+                        </Button.RenderTransform>
+                    </Button>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+
+        </ItemsControl>
+
+        <!--<Button Content="Am" Style="{DynamicResource SectorButtonStyle}" Click="button_AMinor_Click" RenderTransform="{StaticResource Rotate270}"/>
         <Button Content="Em" Style="{DynamicResource SectorButtonStyle}" Click="button_EMinor_Click" RenderTransform="{StaticResource Rotate300}"/>
         <Button Content="Bm" Style="{DynamicResource SectorButtonStyle}" Click="button_BMinor_Click" RenderTransform="{StaticResource Rotate330}"/>
         <Button Content="F#m" Style="{DynamicResource SectorButtonStyle}" Click="button_FsharpMinor_Click" RenderTransform="{StaticResource Rotate000}"/>
@@ -115,6 +151,6 @@
         <Button Content="Fm" Style="{DynamicResource SectorButtonStyle}" Click="button_FMinor_Click" RenderTransform="{StaticResource Rotate150}"/>
         <Button Content="Cm" Style="{DynamicResource SectorButtonStyle}" Click="button_CMinor_Click" RenderTransform="{StaticResource Rotate180}"/>
         <Button Content="Gm" Style="{DynamicResource SectorButtonStyle}" Click="button_GMinor_Click" RenderTransform="{StaticResource Rotate210}"/>
-        <Button Content="Dm" Style="{DynamicResource SectorButtonStyle}" Click="button_DMinor_Click" RenderTransform="{StaticResource Rotate240}"/>
+        <Button Content="Dm" Style="{DynamicResource SectorButtonStyle}" Click="button_DMinor_Click" RenderTransform="{StaticResource Rotate240}"/>-->
     </Grid>
 </UserControl>

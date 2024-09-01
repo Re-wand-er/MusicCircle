@@ -4,11 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageView"
+             xmlns:clmb="clr-namespace:MusicCircle.Interface"
              xmlns:vm="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel"
-             xmlns:uc="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls"
-             mc:Ignorable="d" 
+             xmlns:uc="clr-namespace:MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls" 
              
+             d:DataContext="{d:DesignInstance Type=vm:ChordPageVM}"
+             mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="800">
+    <!--d:DataContext="{d:DesignInstance Type=vm:ChordPageVM}" 
+        Указывает привязку данных только 
+        в дизайнере и на работу приложения не влияет - удобно-->
+    
+    <!--DataContext="{Binding Path=DataContest, RelativeSource={RelativeSource AncestorType=clmb:CustomSecterMajorButton}}"-->
 
     <!--<UserControl.DataContext>
         <vm:ChordPageVM/>

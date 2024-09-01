@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace MusicCircle.Settings
@@ -41,7 +42,7 @@ namespace MusicCircle.Settings
             foreach(var p in page) PageSettingsModel.Add(p);
             
             CurrentView = PageSettingsModel[0].OpenUserControl;
-            PagesClickCommand = new SettingsButtonCommandModel(OpenPage);
+            PagesClickCommand = new SettingsButtonCommandModel<object>(OpenPage);
         }
         private void OpenPage(object pages)
         {

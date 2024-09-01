@@ -2,6 +2,7 @@
 using System.Windows.Input;
 using MusicCircle.Pages;
 using MusicCircle.SoundPlayAlghorithms;
+using System.Windows.Controls;
 
 namespace MusicCircle
 {
@@ -14,11 +15,13 @@ namespace MusicCircle
         /// <summary>
         /// Использование MVVM для привязки и настройки данных 
         /// </summary>
-        
+
+        Page page = new QuartoQuintoCirclePage();
+
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new QuartoQuintoCirclePage());
+            MainFrame.Navigate(page);
         }
         // Привязка текста кнопки от TextBox в Настройках меню
         // TextBox загрузка из ini? (settings) файла
@@ -61,11 +64,20 @@ namespace MusicCircle
         }
         private void QuartoQuintoCirclePage_Click(object sender, RoutedEventArgs e)
         {
-            this.MainFrame.Navigate(new QuartoQuintoCirclePage());
+            OpenPage(new QuartoQuintoCirclePage());
         }
         private void VirtualPianoPage_Click(object sender, RoutedEventArgs e)
         {
-            this.MainFrame.Navigate(new VirtualPianoPage());
+            OpenPage(new VirtualPianoPage());
+        }
+
+        private void OpenPage(Page pageop)
+        {
+            if(page.GetType() != pageop.GetType()) 
+            {
+                page = pageop;
+                this.MainFrame.Navigate(page);
+            }
         }
     }
 }

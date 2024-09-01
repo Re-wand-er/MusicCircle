@@ -44,15 +44,20 @@
                       HorizontalAlignment="Center" 
                       VerticalAlignment="Stretch"/>
 
+            
+            
             <Grid Grid.Column="2">
-                <Viewbox Stretch="None">
+                <ScrollViewer>
+                    <Viewbox Stretch="None">
                         <Grid>
                             <!--<local:CustomUserControl/> -->
                             <Frame Name="MainFrame" NavigationUIVisibility="Hidden"/>
-
+            
                         </Grid>
                     </Viewbox>
-                </Grid>
+                </ScrollViewer>
+            </Grid>
+            
         </Grid>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel;
+using System;
 using System.Windows;
 
 namespace MusicCircle
@@ -8,6 +9,7 @@ namespace MusicCircle
     /// </summary>
     public partial class App : Application
     {
+
         [STAThread]
         static void Main()
         {

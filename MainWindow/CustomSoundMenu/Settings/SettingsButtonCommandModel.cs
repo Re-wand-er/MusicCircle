@@ -3,14 +3,14 @@ using System.Windows.Input;
 
 namespace MusicCircle.Settings
 {
-    internal class SettingsButtonCommandModel : ICommand
+    internal class SettingsButtonCommandModel<T> : ICommand
     {
-        private readonly Action<object> _execute;
+        private readonly Action<T> _execute;
         // Может быть удален, а может и нет
-        private readonly Predicate<object> _canExecute;
+        private readonly Predicate<T> _canExecute;
         //int count = 0;
 
-        public SettingsButtonCommandModel(Action<object> action, Predicate<object> canExecute = null)
+        public SettingsButtonCommandModel(Action<T> action, Predicate<T> canExecute = null)
         {
             _execute = action ?? throw new ArgumentNullException(nameof(action)); 
             _canExecute = canExecute;
@@ -32,7 +32,7 @@ namespace MusicCircle.Settings
 
         public void Execute(object parameter)
         {
-           _execute(parameter);
+           _execute((T)parameter);
         }
     }
 }
