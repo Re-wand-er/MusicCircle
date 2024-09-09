@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel;
 using MusicCircle.SoundPlayAlghorithms;
 
 namespace MusicCircle.Interface
@@ -24,7 +25,7 @@ namespace MusicCircle.Interface
         public CustomSectorMinorButton()
         {
             InitializeComponent();
-            this.DataContext = GlobalService.Instance.ChordPage;
+            this.DataContext = ChordPageVM.Instance;/*GlobalService.Instance.ChordPage;*/
         }
 
     }

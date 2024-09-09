@@ -1,5 +1,5 @@
 ﻿using System.Windows.Controls;
-using MusicCircle;
+using MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel;
 
 namespace MusicCircle.Interface
 {
@@ -14,7 +14,7 @@ namespace MusicCircle.Interface
             InitializeComponent();
             //chordPageVM = new ChordPageVM();
             //DataContext = App.chordpage;
-            this.DataContext = GlobalService.Instance.ChordPage;
+            this.DataContext = ChordPageVM.Instance;//GlobalService.Instance.ChordPage;
            
         }
 

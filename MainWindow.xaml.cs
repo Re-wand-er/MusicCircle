@@ -3,6 +3,8 @@ using System.Windows.Input;
 using MusicCircle.Pages;
 using MusicCircle.SoundPlayAlghorithms;
 using System.Windows.Controls;
+using System.Configuration;
+using System.ComponentModel;
 
 namespace MusicCircle
 {
@@ -12,26 +14,24 @@ namespace MusicCircle
 
     public partial class MainWindow : Window/*, INotifyPropertyChanged*/
     {
-        /// <summary>
-        /// Использование MVVM для привязки и настройки данных 
-        /// </summary>
-
         Page page = new QuartoQuintoCirclePage();
 
+        // Попробовать здесь читать и записывать настройки приложения
+        // SettinsManager settings;
+        
         public MainWindow()
         {
             InitializeComponent();
             MainFrame.Navigate(page);
+
         }
-        // Привязка текста кнопки от TextBox в Настройках меню
-        // TextBox загрузка из ini? (settings) файла
+
         public async void Button_KeyDown(object sender, KeyEventArgs e)
         {
-            // Возможно проблема в рассинхроне кроется здесь
-            // А может и нет 
             
                 switch (e.Key)
                 {
+                    // Переделать всю эту хуйню
                     default: break;
                     // Major
                     case Key.Q: await ChordSound.Play("C E G"); break;
@@ -79,5 +79,6 @@ namespace MusicCircle
                 this.MainFrame.Navigate(page);
             }
         }
+
     }
 }

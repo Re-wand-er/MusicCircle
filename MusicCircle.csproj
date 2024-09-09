@@ -51,6 +51,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -70,11 +73,11 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageModel\ChordPageModel.cs" />
     <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\TonalitySettings.xaml.cs">
       <DependentUpon>TonalitySettings.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\TonalitySettingsVM.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageViewModel\UserControls\TonalitySettingsModel.cs" />
+    <Compile Include="MainWindow\CustomSoundMenu\Settings\SettingsManager.cs" />
     <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomButtonProperty.cs" />
     <Compile Include="MainWindow\QuartoQuintoCircleWindow\QuartoQuintoCirclePage.xaml.cs">
       <DependentUpon>QuartoQuintoCirclePage.xaml</DependentUpon>
@@ -107,6 +110,7 @@
     <Compile Include="MainWindow\CustomSoundMenu\Settings\VirtualPianoSettingsWindow\VirtualPianoSettingsWindow.xaml.cs">
       <DependentUpon>VirtualPianoSettingsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Set\UserSettings.cs" />
     <Compile Include="SoundPlayAlghorithms\ChordSound.cs" />
     <Compile Include="MainWindow\QuartoQuintoCircleWindow\UserControls\CustomSecterMajorButton.xaml.cs">
       <DependentUpon>CustomSecterMajorButton.xaml</DependentUpon>
@@ -218,6 +222,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MainWindow\CustomSoundMenu\Settings\CircleSettingsWindow\Pages\PageModel\" />
     <Folder Include="MainWindow\CustomSoundMenu\Settings\GeneralSettingsWindow\Pages\" />
     <Folder Include="MainWindow\CustomSoundMenu\Settings\VirtualPianoSettingsWindow\Pages\" />
   </ItemGroup>

@@ -12,6 +12,8 @@
         </Style>
     </UserControl.Resources>
     
+    
+    <!-- Добавить выбор кнопки клавиатуры, которая будет это играть -->
     <StackPanel>
         <StackPanel Background="White" Orientation="Horizontal">
             <TextBlock Style="{StaticResource GeneralStyle}" TextAlignment="Right" Text="{Binding OriginalNameOfTonality}" Width="50"/>
@@ -25,7 +27,7 @@
                     </TextBox.ToolTip>
                 </TextBox>
             </Grid>
-            <Button    Style="{StaticResource GeneralStyle}" Content="Картинка" Command="{Binding TestCommand}"/>
+            <!--<Button    Style="{StaticResource GeneralStyle}" Content="Картинка" Command="{Binding TestCommand}"/>-->
         </StackPanel>
     </StackPanel>
 </UserControl>

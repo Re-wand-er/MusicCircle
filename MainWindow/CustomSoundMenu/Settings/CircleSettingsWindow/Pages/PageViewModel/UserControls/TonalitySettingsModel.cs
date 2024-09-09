@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Input;
-
-namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls
+﻿namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserControls
 {
-    internal class TonalitySettingsVM : INotifyPropertyChanged
+    internal class TonalitySettingsModel /*: INotifyPropertyChanged*/
     {
-        public static int count;
-        
         string _originalNameOfTonality;
         string _descriptionOfTonality;
         string _notesOfTonality;
@@ -25,7 +13,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
             set 
             {
                 _originalNameOfTonality = value + ":";
-                OnPropertyChanged(nameof(OriginalNameOfTonality));
+                /*OnPropertyChanged(nameof(OriginalNameOfTonality));*/
             }
         }
 
@@ -35,7 +23,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
             set 
             {
                 _descriptionOfTonality = value;
-                OnPropertyChanged(nameof(DescriptionOfTonality));
+                /*OnPropertyChanged(nameof(DescriptionOfTonality));*/
             }
         }
         
@@ -45,7 +33,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
             set 
             {
                 _notesOfTonality = value;
-                OnPropertyChanged(nameof(NotesOfTonality));
+                /*OnPropertyChanged(nameof(NotesOfTonality));*/
             }
         }
         
@@ -60,7 +48,7 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
         }
 
 
-        public ICommand TestCommand { get; }
+        /*public ICommand TestCommand { get; }
         public TonalitySettingsVM() 
         {
             TestCommand = new SettingsButtonCommandModel<object>(Message);
@@ -70,12 +58,12 @@ namespace MusicCircle.Settings.CircleSettingsWindow.Pages.PageViewModel.UserCont
         public void Message(object jo)
         {
             MessageBox.Show("Привязка есть");
-        }
+        }*/
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        /*public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        }*/
     }
 }

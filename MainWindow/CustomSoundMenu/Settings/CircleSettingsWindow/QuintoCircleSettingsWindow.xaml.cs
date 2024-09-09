@@ -10,7 +10,7 @@ namespace MusicCircle.Settings
             InitializeComponent();
 
             this.DataContext = new SettingsViewModel(
-                new PageSettingsModel("Аккорды", new ChordPageVM()), 
+                new PageSettingsModel("Аккорды", ChordPageVM.Instance/*new ChordPageVM()*/), 
                 new PageSettingsModel("Внешний вид", new VolumePageVM())
             );
         }

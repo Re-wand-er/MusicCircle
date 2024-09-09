@@ -18,7 +18,7 @@ namespace MusicCircle.QuartoQuintoCircleWindow.UserControls
 
             if (parameter is RotateTransform[] transforms)
             {
-                int index = /*++indexer;*/(value as TonalitySettingsVM).Angle % transforms.Length;
+                int index = /*++indexer;*/(value as TonalitySettingsModel).Angle % transforms.Length;
                 return transforms[index/*++indexer*/];
             }
             return null;
